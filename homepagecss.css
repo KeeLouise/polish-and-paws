@@ -89,7 +89,6 @@ nav a{
 }
 nav a:link{
   font-size: 200%;
-  color: white;
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
@@ -178,7 +177,7 @@ body{
   top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10; /* Ensure it appears above the slideshow */
+  z-index: 10;
   background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
   border-radius: 8px;
