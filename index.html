@@ -3,7 +3,7 @@
 <head>
 <title>Polish and Paws Dog Grooming</title>
 <meta charset="utf-8">
-<link href="./homepagecssV2.css" rel="stylesheet" type="text/css">
+<link href="./homepagecss.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div id="container">
@@ -13,7 +13,7 @@
     </header>
     <div class="search-container">
       <input type="text" id="search-bar" placeholder="Search this page...">
-      <button onclick="searchContent()">Search</button>
+      <button type="button" onclick="searchContent()">Search</button>
   </div>
   <div id="message" class="message"></div>
     <nav>
@@ -24,28 +24,27 @@
 
   <main>
     <div class="text-box">
-    <h1>Welcome to Polish &amp Paws</h1>
+    <h1>Welcome to Polish &amp; Paws</h1>
     <p>Established in 2024 by a group of Animal Care Specialists, we are passionate about caring for your dogs.
        All of our staff are fully trained and qualified under OCNNI standards and above. You can trust us in giving your Pooch the pamper they deserve!
     </p>
 </div>
 </main>
-  
 <div class="slideshow-container">
 
   <div class="mySlides fade">
     <div class="numbertext">1 / 3</div>
-    <img src="./img1.jpg" width="100%" alt="Dog being groomed">
+    <img src="./images/img1.jpg" width="100%" alt="Dog being groomed">
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">2 / 3</div>
-    <img src="./img2.jpg" width="100%" alt="Dog being groomed">
+    <img src="./images/img2.jpg" width="100%" alt="Dog being groomed">
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">3 / 3</div>
-    <img src="./img3.jpg" width="100%" alt="Dog being groomed">
+    <img src="./images/img3.jpg" width="100%" alt="Dog being groomed">
   </div>
 
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -57,13 +56,14 @@
   <span class="dot" onclick="currentSlide(1)"></span>
   <span class="dot" onclick="currentSlide(2)"></span>
   <span class="dot" onclick="currentSlide(3)"></span>
+
 </div>
-    <footer>Polish &amp; Paws Copyright &copy; 2024<br>
-      <p>Unit 1<br>
-         Swords Main Street<br>
-         Swords<br>
-         Co. Dublin</p>
-    </footer>
+<footer>Polish &amp; Paws Copyright &copy; 2024<br>
+  <p>Unit 1<br>
+  Swords Main Street<br>
+  Swords<br>
+  Co. Dublin</p>
+</footer>
 </div>
 <script src="homepagescript.js"></script>
 </body>

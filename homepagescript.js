@@ -2,55 +2,45 @@ function searchContent() {
   let searchQuery = document.getElementById('search-bar').value.trim().toLowerCase();
   let messageDiv = document.getElementById('message');
 
-  // Clear previous highlights and message
   let highlightedElements = document.querySelectorAll('.highlight');
   highlightedElements.forEach(element => {
       element.classList.remove('highlight');
   });
 
-  // Clear the message (hide it) initially
   messageDiv.textContent = ''; 
   messageDiv.classList.remove('show');
 
-  // If search query is empty, show message and return
   if (!searchQuery) {
-      messageDiv.textContent = 'Please enter a search term to find results.';
+      messageDiv.textContent = 'Please enter a search term';
       messageDiv.classList.add('show');
-      return; // Stop further processing
+      return;
   }
 
-  // Select text-containing elements (p, h1, h2, h3, etc.)
   let elements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6');
 
-  let foundMatches = false; // Flag to check if we find any matches
+  let foundMatches = false;
 
   elements.forEach(element => {
       let textContent = element.textContent || element.innerText;
 
-      // If the element contains the search query, highlight the matching text
       if (textContent.toLowerCase().includes(searchQuery)) {
           highlightText(element, searchQuery);
-          foundMatches = true; // Mark that we found at least one match
+          foundMatches = true;
       }
   });
 
-  // If no matches were found, show a message
   if (!foundMatches) {
-      messageDiv.textContent = 'No results found for "' + searchQuery + '".';
+      messageDiv.textContent = 'No results found for "' + searchQuery + '"';
       messageDiv.classList.add('show');
   }
 }
 
-// Function to highlight matching text within an element
 function highlightText(element, searchQuery) {
-  let regex = new RegExp(`(${searchQuery})`, 'gi'); // Regex to find the exact word, case-insensitive
+  let regex = new RegExp(`(${searchQuery})`, 'gi');
   let innerHTML = element.innerHTML;
   
-  // Replace the matching text with highlighted version
   element.innerHTML = innerHTML.replace(regex, `<span class="highlight">$1</span>`);
 }
-
-
 
 //Nav Script
 const navLinks = document.querySelectorAll('nav a');
