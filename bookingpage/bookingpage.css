@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+}
+.desktop-logo{
+    display: inline;
+}
+.mobiletablet-logo{
+    display: none;
+}
+
+header{
+    text-align: center;
+
+}
+
+nav{
+  background-color: pink;
+  font-family: sans-serif;
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding-bottom: 20p;
+
+}
+nav ul{
+  list-style-type: none;          
+  margin: 0; 
+  padding: 0;              
+  gap: 50px;
+  position: sticky;
+}
+nav a{
+  text-decoration: none;
+}
+nav a:link{
+  font-size: 200%;
+  color: white;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+body{
+  background-color: pink;
+}
+main {
+    background-image: url('./images/background-image.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#booking-form {
+    font-family: sans-serif;
+    background: white; opacity: 60%;
+    color: black;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+}
+#booking-form h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 75%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn {
+    font-family: sans-serif;
+    font-weight: 800;
+    display: block;
+    width: 100%;
+    background-color: #89CFF0;
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    
+}
+.btn:hover {
+    background-color: #218838;
+}
+
+footer{
+  background-color: pink;
+  font-family: sans-serif;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#wrapper{ 
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+}
+header {
+  grid-row: 1 / 2; grid-column: 1 / 4;
+}
+nav{
+  grid-row: 3 / 4; grid-column: 1 / 4
+}
+main{
+  grid-row: 5 / 6; grid-column: 1 / 4;
+}
+aside{
+  grid-row: 5 / 6; grid-column: 3/ 4;
+}
+footer{
+  grid-row: 6 / 7; grid-column: 1 / 4;
+}
+
+
+
+
+
