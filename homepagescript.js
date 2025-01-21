@@ -8,18 +8,58 @@ class SearchHighlighter {
     if (this.searchButton) {
       this.searchButton.addEventListener('click', () => this.searchContent());
     } 
-  }
-   searchContent() {
+    }
+
+  searchContent() {
     let searchQuery = this.searchBar.value.trim().toLowerCase();
 
-    // the below line will reset any previous highlighted text
     this.resetHighlights();
 
     this.messageDiv.textContent = '';
     this.messageDiv.classList.remove('show');
 
     if (!searchQuery) {
-      this.displayMessage('Please enter asearch term');
+      this.displayMessage('Please enter a search term');
       return;
     }
-  }}
+
+    let elements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6');
+    let foundMatches = false;
+
+    elements.forEach(element => {
+      let textContent = element.textContent || element.innerText;
+
+      if (textContent.toLowerCase().includes(searchQuery)) {
+        this.highlightText(element, searchQuery);
+        foundMatches = true;
+      }
+    });
+
+    if (!foundMatches) {
+      this.displayMessage(`No results found for "${searchQuery}"`);
+    }
+  }
+
+  highlightText(element, searchQuery) {
+    searchQuery = searchQuery.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+    let regex = new RegExp(`(${searchQuery})`, 'gi');
+    let innerHTML = element.innerHTML;
+    element.innerHTML = innerHTML.replace(regex, `<span class="highlight">$1</span>`);
+  }
+
+  resetHighlights() {
+    let highlightedElements = document.querySelectorAll('.highlight');
+    highlightedElements.forEach(element => {
+      element.classList.remove('highlight');
+    });
+  }
+
+  displayMessage(message) {
+    this.messageDiv.textContent = message;
+    this.messageDiv.classList.add('show');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  new SearchHighlighter('search-bar', 'search-button', 'message');
+});
