@@ -15,6 +15,59 @@ header{
   padding: 20px;
 }
 
+.search-container {
+position: absolute;
+top: 20%;
+right: 10px;
+transform: translateY(-50%);
+}
+
+#search-bar {
+width: 200px; 
+padding: 10px;
+font-size: 16px;
+border: 1px solid black;
+border-radius: 10px;
+margin-right: 10px;
+}
+
+button {
+padding: 10px 15px;
+font-family: sans-serif;
+font-size: 16px;
+cursor: pointer;
+border: 1px solid black;
+border-radius: 10px;
+background-color: #89CFF0;
+}
+
+button:hover{
+background-color: white;
+}
+
+.highlight {
+background-color: #89CFF0;
+color: black;
+font-weight: bold;
+}
+
+.message {
+margin-left: 450px;
+margin-right: 450px;
+color: black;
+font-weight: bold;
+text-align: center;
+display: none;
+}
+
+.message.show {
+display: block;
+border: 2px solid black;
+padding: 10px;
+border-radius: 5px;
+background-color: white;
+}
+
 nav{
 background-color: pink;
 font-family: sans-serif;
@@ -75,3 +128,4 @@ grid-row: 5 / 6; grid-column: 3/ 4;
 footer{
 grid-row: 6 / 7; grid-column: 1 / 4;
 }
+
