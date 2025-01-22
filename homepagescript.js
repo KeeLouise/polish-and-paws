@@ -82,9 +82,10 @@ function showSlides() {
   if (slideIndex > slides.length) {
     slideIndex = 1;
   }
-  slides[slideIndex 0].style.display = 'block';
-  dots[slideIndex 0].classList.add('active');
+  slides[slideIndex - 1].style.display = 'block';
+  dots[slideIndex - 1].classList.add('active');
 }
+
 function startAutoPlay() {
   autoPlayInterval = setInterval(() => {
     showSlides();
@@ -118,4 +119,3 @@ function initSlider() {
 }
 
 document.addEventListener('DOMContentLoaded', initSlider);
-
