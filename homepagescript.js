@@ -85,4 +85,37 @@ function showSlides() {
   slides[slideIndex - 1].style.display = 'block';
   dots[slideIndex - 1].classList.add('active');
 }
+function startAutoPlay() {
+  autoPlayInterval = setInterval(() => {
+    showSlides();
+  }, 3000);
+}
+
+function stopAutoPlay() {
+  clearInterval(autoPlayInterval);
+}
+
+function plusSlides(n) {
+  stopAutoPlay();
+  slideIndex += n - 1;
+  if (slideIndex < 0) {
+    slideIndex = 0;
+  }
+  showSlides();
+  startAutoPlay();
+}
+
+function currentSlide(n) {
+  stopAutoPlay();
+  slideIndex = n - 1;
+  showSlides();
+  startAutoPlay();
+}
+
+function initSlider() {
+  showSlides();
+  startAutoPlay();
+}
+
+document.addEventListener('DOMContentLoaded', initSlider);
 
