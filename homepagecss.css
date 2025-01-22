@@ -1,7 +1,9 @@
+/* Reset Margin */
 *{
   margin: 0;
 }
 
+/* Hide the mobile logo initially */
 .desktop-logo{
   display: inline;
 }
@@ -9,12 +11,14 @@
   display: none;
 }
 
+/* Position header as relative to place the search bar within it */
 header{
   text-align: center;
-  position: relative;
+  position: relative;  /* Make header the reference point for absolute positioning */
   padding: 20px;
 }
 
+/* The search container that holds the input field and button */
 .search-container {
 position: absolute;
 top: 20%;
@@ -22,15 +26,17 @@ right: 10px;
 transform: translateY(-50%);
 }
 
+/* Styling the search bar */
 #search-bar {
-width: 200px;
+width: 200px;          /* Make it wider */
 padding: 10px;
 font-size: 16px;
 border: 1px solid black;
 border-radius: 10px;
-margin-right: 10px;
+margin-right: 10px;     /* Space between the input and button */
 }
 
+/* Styling the search button */
 button {
 padding: 10px 15px;
 font-family: sans-serif;
@@ -68,6 +74,7 @@ border-radius: 5px;
 background-color: white;
 }
 
+/* Navigation styling */
 nav{
 background-color: pink;
 font-family: sans-serif;
@@ -176,6 +183,37 @@ from {opacity: .1}
 to {opacity: 1}
 }
 
+.text-box {
+position: absolute;
+top: 100%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 10;
+background-color: rgba(255, 255, 255, 0.8);
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+text-align: center;
+}
+
+.text-box h1 {
+margin: 0;
+font-size: 2em;
+}
+
+.text-box p {
+margin: 10px 0 0;
+font-size: 1.2em;
+}
+
+footer{
+background-color: pink;
+font-family: sans-serif;
+text-align: center;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
 .newsletter-container {
 text-align: center;
 padding: 20px;
@@ -255,12 +293,11 @@ transition: background-color 0.3s ease;
 background-color: #64a9d1;
 }
 
-footer{
-  background-color: pink;
-  font-family: sans-serif;
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  }
+#container{ 
+display: grid;
+grid-template-columns: auto;
+grid-template-rows: auto;
+}
+
 
 
