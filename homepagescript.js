@@ -7,13 +7,12 @@ class SearchHighlighter {
 
     if (this.searchButton) {
       this.searchButton.addEventListener('click', () => this.searchContent());
-    }
+    } 
   }
 
   searchContent() {
     let searchQuery = this.searchBar.value.trim().toLowerCase();
 
-    // Reset any previous highlights
     this.resetHighlights();
 
     this.messageDiv.textContent = '';
@@ -119,3 +118,46 @@ function initSlider() {
 }
 
 document.addEventListener('DOMContentLoaded', initSlider);
+
+// Newsletter script
+const toggleButton = document.getElementById('newsletter-toggle');
+const dropdown = document.getElementById('newsletter-dropdown');
+const form = document.getElementById('newsletter-form');
+const emailInput = document.getElementById('email');
+const messageDiv = document.getElementById('newslettermessage');
+
+toggleButton.addEventListener('click', () => {
+  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+  dropdown.style.maxHeight = dropdown.style.maxHeight === '300px' ? '0' : '300px';
+});
+
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const email = emailInput.value.trim();
+
+  if (!email) {
+    messageDiv.textContent = 'Please enter a valid email address!';
+    messageDiv.classList.add('error');
+    messageDiv.classList.remove('success');
+    messageDiv.style.display = 'block';
+    return;
+  }
+
+  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  if (!emailRegex.test(email)) {
+    messageDiv.textContent = 'Please enter a valid email address!';
+    messageDiv.classList.add('error');
+    messageDiv.classList.remove('success');
+    messageDiv.style.display = 'block';
+    return;
+  }
+
+  messageDiv.textContent = `Thank you for joining our Newsletter, ${email}!`;
+  messageDiv.classList.add('success');
+  messageDiv.classList.remove('error');
+  messageDiv.style.display = 'block';
+
+  
+  emailInput.value = '';
+});
