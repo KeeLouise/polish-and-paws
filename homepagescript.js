@@ -7,12 +7,13 @@ class SearchHighlighter {
 
     if (this.searchButton) {
       this.searchButton.addEventListener('click', () => this.searchContent());
-    } 
     }
+  }
 
   searchContent() {
     let searchQuery = this.searchBar.value.trim().toLowerCase();
 
+    // Reset any previous highlights
     this.resetHighlights();
 
     this.messageDiv.textContent = '';
@@ -63,3 +64,25 @@ class SearchHighlighter {
 document.addEventListener('DOMContentLoaded', () => {
   new SearchHighlighter('search-bar', 'search-button', 'message');
 });
+
+// Gallery Script
+let slideIndex = 0;
+let autoPlayInterval;
+
+function showSlides() {
+  const slides = document.querySelectorAll('.mySlides');
+  const dots = document.querySelectorAll('.dot');
+
+  slides.forEach(slide => (slide.style.display = 'none'));
+
+  dots.forEach(dot => dot.classList.remove('active'));
+
+  slideIndex++;
+
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  slides[slideIndex - 1].style.display = 'block';
+  dots[slideIndex - 1].classList.add('active');
+}
+
