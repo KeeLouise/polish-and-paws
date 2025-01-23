@@ -13,6 +13,7 @@ class SearchHighlighter {
   searchContent() {
     let searchQuery = this.searchBar.value.trim().toLowerCase();
 
+    // Reset any previous highlights
     this.resetHighlights();
 
     this.messageDiv.textContent = '';
@@ -62,6 +63,24 @@ class SearchHighlighter {
 
 document.addEventListener('DOMContentLoaded', () => {
   new SearchHighlighter('search-bar', 'search-button', 'message');
+});
+
+// Nav Script
+const navLinks = document.querySelectorAll('nav a');
+
+function enlargeLink(event) {
+  event.target.style.transform = 'scale(1.2)';
+  event.target.style.color = '#89CFF0';
+}
+
+function resetLink(event) {
+  event.target.style.transform = 'scale(1)';
+  event.target.style.color = 'white';
+}
+
+navLinks.forEach(link => {
+  link.addEventListener('mouseover', enlargeLink);
+  link.addEventListener('mouseout', resetLink);
 });
 
 // Gallery Script
@@ -161,3 +180,4 @@ form.addEventListener('submit', function (event) {
   
   emailInput.value = '';
 });
+
