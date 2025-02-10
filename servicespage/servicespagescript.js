@@ -1,4 +1,4 @@
-//Search Script OOP
+//Search Script
 class SearchHighlighter {
   constructor(searchBarId, messageDivId) {
     this.searchBar = document.getElementById(searchBarId);
@@ -117,9 +117,50 @@ navLinks.forEach(link => {
   link.addEventListener('mouseout', resetLink);
 });
 
+// Newsletter script
+const toggleButton = document.getElementById('newsletter-toggle');
+const dropdown = document.getElementById('newsletter-dropdown');
+const form = document.getElementById('newsletter-form');
+const emailInput = document.getElementById('email');
+const messageDiv = document.getElementById('newslettermessage');
+
+toggleButton.addEventListener('click', () => {
+  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+  dropdown.style.maxHeight = dropdown.style.maxHeight === '300px' ? '0' : '300px';
+});
+
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const email = emailInput.value.trim();
+
+  if (!email) {
+    messageDiv.textContent = 'Please enter a valid email address!';
+    messageDiv.classList.add('error');
+    messageDiv.classList.remove('success');
+    messageDiv.style.display = 'block';
+    return;
+  }
+
+  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  if (!emailRegex.test(email)) {
+    messageDiv.textContent = 'Please enter a valid email address!';
+    messageDiv.classList.add('error');
+    messageDiv.classList.remove('success');
+    messageDiv.style.display = 'block';
+    return;
+  }
+
+  messageDiv.textContent = `Thank you for joining our Newsletter, ${email}!`;
+  messageDiv.classList.add('success');
+  messageDiv.classList.remove('error');
+  messageDiv.style.display = 'block';
+
+  
+  emailInput.value = '';
+});
+
 // Service Script
-
-
 class Service {
   constructor(title, price, dogSize) {
     this.title = title;
@@ -175,4 +216,43 @@ class NailTrimService extends Service {
     }
     return info;
   }
+}
+
+const services = [
+  new GroomingService("Full Grooming (Small Dog)", 50, "Small", true),
+  new GroomingService("Full Grooming (Medium Dog)", 70, "Medium", false),
+  new GroomingService("Full Grooming (Large Dog)", 90, "Large", false),
+  new BathingService("Bath, Blowdry & Brush (Small Dog)", 30, "Small", true),
+  new BathingService("Bath, Blowdry & Brush (Medium Dog)", 50, "Medium", true),
+  new BathingService("Bath, Blowdry & Brush (Large Dog)", 70, "Large", true),
+  new NailTrimService("Nail Trim (All Breeds)", 20, "All", true),
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderServices(services);
+  document.getElementById('dog-size-select').addEventListener('change', filterServices);
+});
+
+function renderServices(servicesToRender) {
+  const serviceList = document.getElementById('service-list');
+  serviceList.innerHTML = ''; 
+  
+  servicesToRender.forEach(service => {
+    const serviceItem = document.createElement('li');
+    serviceItem.className = 'service-item';
+    serviceItem.innerHTML = `
+      <h3>${service.title}</h3>
+      <p>${service.displayInfo()}</p>
+    `;
+    serviceList.appendChild(serviceItem);
+  });
+}
+
+function filterServices() {
+  const selectedSize = document.getElementById('dog-size-select').value;
+  const filteredServices = services.filter(service => 
+    selectedSize === 'All' || service.dogSize === selectedSize || service.dogSize === 'All'
+  );
+
+  renderServices(filteredServices);
 }
