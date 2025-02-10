@@ -161,3 +161,18 @@ class BathingService extends Service {
     return info;
   }
 }
+
+class NailTrimService extends Service {
+  constructor(title, price, dogSize, isForAllBreeds) {
+    super(title, price, dogSize);
+    this.isForAllBreeds = isForAllBreeds;
+  }
+
+  displayInfo() {
+    let info = super.displayInfo();
+    if (this.isForAllBreeds) {
+      info += " (Available for All Breeds)";
+    }
+    return info;
+  }
+}
