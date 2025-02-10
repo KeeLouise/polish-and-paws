@@ -116,3 +116,48 @@ navLinks.forEach(link => {
   link.addEventListener('mouseover', enlargeLink);
   link.addEventListener('mouseout', resetLink);
 });
+
+// Service Script
+
+
+class Service {
+  constructor(title, price, dogSize) {
+    this.title = title;
+    this.price = price;
+    this.dogSize = dogSize;
+  }
+
+  displayInfo() {
+    return `${this.title} - Price: $${this.price} - Suitable for: ${this.dogSize} dogs`;
+  }
+}
+
+class GroomingService extends Service {
+  constructor(title, price, dogSize, includesTeethCleaning) {
+    super(title, price, dogSize);
+    this.includesTeethCleaning = includesTeethCleaning;
+  }
+
+  displayInfo() {
+    let info = super.displayInfo();
+    if (this.includesTeethCleaning) {
+      info += " (Includes Teeth Cleaning)";
+    }
+    return info;
+  }
+}
+
+class BathingService extends Service {
+  constructor(title, price, dogSize, includesBlowDry) {
+    super(title, price, dogSize);
+    this.includesBlowDry = includesBlowDry;
+  }
+
+  displayInfo() {
+    let info = super.displayInfo();
+    if (this.includesBlowDry) {
+      info += " (Includes Blow Dry)";
+    }
+    return info;
+  }
+}
