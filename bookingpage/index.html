@@ -3,18 +3,27 @@
 <head>
 <title>Polish and Paws Dog Grooming</title>
 <meta charset="utf-8">
-<link href="" rel="stylesheet" type="text/css">
+<link href="#" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div id="container">
         <header class="header">
             <img src="/images/company-logo.webp" width="500" height="250" alt="Company Logo" class="desktop-logo">
-            <img src="" width="350" height="250" alt="Company Logo" class="mobiletablet-logo">
+            <img src="#" width="350" height="250" alt="Company Logo" class="mobiletablet-logo">
         </header>
     </div>
     <div class="search-container">
         <input type="text" id="search-bar" placeholder="Search this page...">
         <button type="button" onclick="searchContent()">Search</button>
+        <div class="newsletter-container">
+            <button type="button" class="newsletter-toggle" id="newsletter-toggle">Sign Up for Our Newsletter</button>
+            <div id="newsletter-dropdown" class="newsletter-dropdown">
+              <div id="newslettermessage" class="newslettermessage"></div>
+              <form id="newsletter-form">
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <button type="submit">Sign Up</button>
+              </form>
+            </div>
     </div>
     <div id="message" class="message"></div>
     <nav>
@@ -38,6 +47,22 @@
             <label for="email">Email:</label>
             <input type="email" id="email-field" name="email" placeholder="Enter your email address" required>
         </div>
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone-field" name="phone" placeholder="Enter your phone number" required>
+        </div>
+        <div class="form-group">
+            <label for="date">Booking Date:</label>
+            <input type="date" id="date-field" name="date" required>
+        </div>
+        <div class="form-group">
+            <label for="time">Preferred Time:</label>
+            <input type="time" id="time-field" name="time" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Service Required:</label>
+            <textarea id="your-message" name="message" rows="4" placeholder="Enter service required"></textarea>
+        </div>
         <button type="submit" class="btn">Submit Booking</button>
     </form>
     </main>
@@ -49,7 +74,7 @@
          Swords<br>
          Co. Dublin</p>
 </footer>
-<script src=""></script>
+<script src="#"></script>
+</div>
 </body>
-
 </html>
