@@ -5,11 +5,13 @@
 <link href="./CSS/homepagecss.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+  <div id="container">
   <header>
     <div class="top-bar">
-      <div class="search-container">
+    <div class="search-container">
         <input type="text" id="search-bar" placeholder="Search this page...">
         <button type="button" id="search-button">Search</button>
+        <div id="message"></div>
         <div class="newsletter-container">
           <button type="button" class="newsletter-toggle" id="newsletter-toggle">Sign Up for Our Newsletter</button>
           <div id="newsletter-dropdown" class="newsletter-dropdown">
@@ -28,13 +30,11 @@
       <nav>
         <a href="#">Home</a>
         <a href="./servicespage/">Our Services</a>
-        <a href="#">Gallery</a>
         <a href="./bookingpage/">Book Now</a>
       </nav>
     </div>
   </header>
   <main>
-</main>
 <div class="slideshow-container">
 
   <div class="text-box">
@@ -67,6 +67,7 @@
   <span class="dot" onclick="currentSlide(3)"></span>
 
 </div>
+</main>
 <footer>Polish &amp; Paws Copyright &copy; 2024<br>
   <p>Unit 1<br>
   Swords Main Street<br>
@@ -74,6 +75,7 @@
   Co. Dublin</p>
 </footer>
 <script src="./Javascript/homepagescript.js"></script>
+</div>
 </body>
 </html>
 
