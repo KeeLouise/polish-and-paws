@@ -1,4 +1,4 @@
-// Search Script OOP
+// Search Script
 class SearchHighlighter {
   constructor(searchBarId, searchButtonId, messageDivId) {
     this.searchBar = document.getElementById(searchBarId);
@@ -7,24 +7,25 @@ class SearchHighlighter {
 
     if (this.searchButton) {
       this.searchButton.addEventListener('click', () => this.searchContent());
-    } 
+    } else {
+      console.error('Search button not found!');
+    }
   }
-
   searchContent() {
     let searchQuery = this.searchBar.value.trim().toLowerCase();
-
-    // Reset any previous highlights
     this.resetHighlights();
 
     this.messageDiv.textContent = '';
     this.messageDiv.classList.remove('show');
 
     if (!searchQuery) {
-      this.displayMessage('Please enter a search term');
+      this.showMessage('Please enter a search term');
       return;
     }
 
-    let elements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6');
+    let elements = document.querySelectorAll(
+      'p, h1, h2, h3, h4, h5, h6, span, label, input, textarea, select'
+    );
     let foundMatches = false;
 
     elements.forEach(element => {
@@ -37,7 +38,7 @@ class SearchHighlighter {
     });
 
     if (!foundMatches) {
-      this.displayMessage(`No results found for "${searchQuery}"`);
+      this.showMessage(`No results for "${searchQuery}"`);
     }
   }
 
@@ -55,7 +56,7 @@ class SearchHighlighter {
     });
   }
 
-  displayMessage(message) {
+  showMessage(message) {
     this.messageDiv.textContent = message;
     this.messageDiv.classList.add('show');
   }

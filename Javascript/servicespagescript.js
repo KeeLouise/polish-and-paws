@@ -1,26 +1,31 @@
-//Search Script
+// Search Script
 class SearchHighlighter {
-  constructor(searchBarId, messageDivId) {
+  constructor(searchBarId, searchButtonId, messageDivId) {
     this.searchBar = document.getElementById(searchBarId);
     this.messageDiv = document.getElementById(messageDivId);
+    this.searchButton = document.getElementById(searchButtonId);
 
-    this.searchButton = document.querySelector('button');
-    this.searchButton.addEventListener('click', () => this.searchContent());
+    if (this.searchButton) {
+      this.searchButton.addEventListener('click', () => this.searchContent());
+    } else {
+      console.error('Search button not found!');
+    }
   }
-
   searchContent() {
     let searchQuery = this.searchBar.value.trim().toLowerCase();
-
     this.resetHighlights();
+
     this.messageDiv.textContent = '';
     this.messageDiv.classList.remove('show');
 
     if (!searchQuery) {
-      this.displayMessage('Please enter a search term');
+      this.showMessage('Please enter a search term');
       return;
     }
 
-    let elements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6');
+    let elements = document.querySelectorAll(
+      'p, h1, h2, h3, h4, h5, h6, span, label, input, textarea, select'
+    );
     let foundMatches = false;
 
     elements.forEach(element => {
@@ -33,16 +38,14 @@ class SearchHighlighter {
     });
 
     if (!foundMatches) {
-      this.displayMessage(`No results found for "${searchQuery}"`);
+      this.showMessage(`No results for "${searchQuery}"`);
     }
   }
 
   highlightText(element, searchQuery) {
     searchQuery = searchQuery.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-
     let regex = new RegExp(`(${searchQuery})`, 'gi');
     let innerHTML = element.innerHTML;
-
     element.innerHTML = innerHTML.replace(regex, `<span class="highlight">$1</span>`);
   }
 
@@ -53,53 +56,17 @@ class SearchHighlighter {
     });
   }
 
-  displayMessage(message) {
+  showMessage(message) {
     this.messageDiv.textContent = message;
     this.messageDiv.classList.add('show');
   }
 }
 
-class ExactSearchHighlighter extends SearchHighlighter {
-  constructor(searchBarId, messageDivId) {
-    super(searchBarId, messageDivId);
-  }
-
-  searchContent() {
-    let searchQuery = this.searchBar.value.trim().toLowerCase();
-    this.resetHighlights();
-
-    this.messageDiv.textContent = '';
-    this.messageDiv.classList.remove('show');
-
-    if (!searchQuery) {
-      this.displayMessage('Please enter a search term');
-      return;
-    }
-
-    let elements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6');
-    let foundMatches = false;
-
-    elements.forEach(element => {
-      let textContent = element.textContent || element.innerText;
-
-      if (textContent.toLowerCase() === searchQuery) {
-        this.highlightText(element, searchQuery);
-        foundMatches = true;
-      }
-    });
-
-    if (!foundMatches) {
-      this.displayMessage(`No exact match found for "${searchQuery}"`);
-    }
-  }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-  new SearchHighlighter('search-bar', 'message');
-  
+  new SearchHighlighter('search-bar', 'search-button', 'message');
 });
 
-//Nav Script
+// Navigation Script
 const navLinks = document.querySelectorAll('nav a');
 
 function enlargeLink(event) {
@@ -116,6 +83,7 @@ navLinks.forEach(link => {
   link.addEventListener('mouseover', enlargeLink);
   link.addEventListener('mouseout', resetLink);
 });
+
 
 // Newsletter script
 const toggleButton = document.getElementById('newsletter-toggle');

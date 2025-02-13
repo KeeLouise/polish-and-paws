@@ -1,15 +1,19 @@
-//Search script
-class Search {
-  constructor(searchBarId, messageId, searchButtonId) {
+// Search Script
+class SearchHighlighter {
+  constructor(searchBarId, searchButtonId, messageDivId) {
     this.searchBar = document.getElementById(searchBarId);
-    this.messageDiv = document.getElementById(messageId);
+    this.messageDiv = document.getElementById(messageDivId);
     this.searchButton = document.getElementById(searchButtonId);
-    this.searchButton.addEventListener('click', () => this.searchContent());
-  }
 
+    if (this.searchButton) {
+      this.searchButton.addEventListener('click', () => this.searchContent());
+    } else {
+      console.error('Search button not found!');
+    }
+  }
   searchContent() {
     let searchQuery = this.searchBar.value.trim().toLowerCase();
-    this.clearHighlights();
+    this.resetHighlights();
 
     this.messageDiv.textContent = '';
     this.messageDiv.classList.remove('show');
@@ -19,51 +23,37 @@ class Search {
       return;
     }
 
+    let elements = document.querySelectorAll(
+      'p, h1, h2, h3, h4, h5, h6, span, label, input, textarea, select'
+    );
     let foundMatches = false;
 
-    let elements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, input, textarea');
-    
     elements.forEach(element => {
-      let textContent = '';
-      if (element.tagName.toLowerCase() === 'input' || element.tagName.toLowerCase() === 'textarea') {
-        textContent = element.value.toLowerCase();
-      } else {
-        textContent = element.textContent || element.innerText;
-      }
-      if (textContent.includes(searchQuery)) {
+      let textContent = element.textContent || element.innerText;
+
+      if (textContent.toLowerCase().includes(searchQuery)) {
         this.highlightText(element, searchQuery);
         foundMatches = true;
       }
     });
 
     if (!foundMatches) {
-      this.showMessage(`No results found for "${searchQuery}"`);
+      this.showMessage(`No results for "${searchQuery}"`);
     }
-  }
-
-  clearHighlights() {
-    let highlightedElements = document.querySelectorAll('.highlight');
-    highlightedElements.forEach(element => {
-      element.classList.remove('highlight');
-      element.innerHTML = element.innerHTML.replace(/<span class="highlight">(.*?)<\/span>/g, '$1');
-    });
-
-    let formFields = document.querySelectorAll('input.highlight, textarea.highlight');
-    formFields.forEach(field => {
-      field.classList.remove('highlight');
-      field.style.backgroundColor = '';
-    });
   }
 
   highlightText(element, searchQuery) {
+    searchQuery = searchQuery.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
     let regex = new RegExp(`(${searchQuery})`, 'gi');
-    
-    if (element.tagName.toLowerCase() === 'input' || element.tagName.toLowerCase() === 'textarea') {
-      element.style.backgroundColor = '#ffff99';
-    } else {
-      let innerHTML = element.innerHTML;
-      element.innerHTML = innerHTML.replace(regex, `<span class="highlight">$1</span>`);
-    }
+    let innerHTML = element.innerHTML;
+    element.innerHTML = innerHTML.replace(regex, `<span class="highlight">$1</span>`);
+  }
+
+  resetHighlights() {
+    let highlightedElements = document.querySelectorAll('.highlight');
+    highlightedElements.forEach(element => {
+      element.classList.remove('highlight');
+    });
   }
 
   showMessage(message) {
@@ -71,8 +61,9 @@ class Search {
     this.messageDiv.classList.add('show');
   }
 }
+
 document.addEventListener('DOMContentLoaded', () => {
-  const search = new Search('search-bar', 'message', 'search-button');
+  new SearchHighlighter('search-bar', 'search-button', 'message');
 });
 
 // Newsletter script
