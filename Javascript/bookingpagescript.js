@@ -156,5 +156,14 @@ document.addEventListener("DOMContentLoaded", function(){
       input.insertAdjacentElement("afterend", errorMsg);
       isValid = false;
     }
+
+    if (fullName.value.trim() === "") {
+      showError(fullName, "Full name is required");
+    }
+
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailRegex.test(email.value.trim())) {
+      showError(email, "Enter a valid email address");
+    }
   })
 })
