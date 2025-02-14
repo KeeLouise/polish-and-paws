@@ -126,3 +126,16 @@ navLinks.forEach(link => {
   link.addEventListener('mouseover', enlargeLink);
   link.addEventListener('mouseout', resetLink);
 });
+
+//Booking Script
+
+document.addEventListener("DOMContentLoaded", function(){
+  const form = document.getElementById("booking-form");
+
+  form.addEventListener("submit", function(event){
+    event.preventDefault();
+
+    let isValid = true;
+
+  })
+})
