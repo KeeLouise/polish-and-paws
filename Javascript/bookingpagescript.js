@@ -165,5 +165,27 @@ document.addEventListener("DOMContentLoaded", function(){
     if (!emailRegex.test(email.value.trim())) {
       showError(email, "Enter a valid email address");
     }
-  })
-})
+
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(phone.value.trim())){
+      showError(phone, "Enter a valid phone number (10 digits)");
+    }
+
+      if (date.value.trim() === "") {
+        showError(date, "Please select a booking date.");
+    }
+
+    if (time.value.trim() === "") {
+        showError(time, "Please select a booking time.");
+    }
+
+    if (service.value.trim() === "") {
+        showError(service, "Please enter the service required.");
+    }
+
+    if (isValid) {
+        alert("Form submitted successfully!");
+        form.submit();
+    }
+  });
+});
