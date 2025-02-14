@@ -136,6 +136,14 @@ document.addEventListener("DOMContentLoaded", function(){
     event.preventDefault();
 
     let isValid = true;
+  
+    const fullName = document.getElementById("full-name");
+    const dogName = document.getElementById("dogs-name");
+    const email = document.getElementById("email-field");
+    const phone = document.getElementById("phone-field");
+    const date = document.getElementById("date-field");
+    const time = document.getElementById("time-field");
+    const service = document.getElementById("your-message");
 
   })
 })
