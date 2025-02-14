@@ -1,5 +1,6 @@
-*{
+body, html{
   margin: 0;
+  background-color: pink;
 }
 .desktop-logo{
   display: inline;
@@ -7,6 +8,14 @@
 .mobiletablet-logo{
   display: none;
 }
+
+header{
+display: flex;
+flex-direction: column;
+width: 100%;
+box-sizing: border-box;
+}
+
 .top-bar{
 display: flex;
 justify-content: flex-end;
@@ -15,6 +24,7 @@ padding: 10px 20px;
 background-color: pink;
 width: 100%;
 gap: 20px;
+box-sizing: border-box;
 }
 
 .search-container{
@@ -25,10 +35,13 @@ gap: 10px;
 
 #search-bar{
 width: 200px;
+max-width: 200px;
 padding: 10px;
 font-size: 16px;
 border: 1px solid black;
 border-radius: 10px;
+overflow-x: hidden;
+box-sizing: border-box;
 }
 
 .highlight {
@@ -72,9 +85,12 @@ align-items: center;
 justify-content: center;
 gap: 50px;
 width: 100%;
+max-width: 100%;
 margin-left: -50px;
+margin-right: -50px;
 margin-top: -50px;
 margin-bottom: 50px;
+
 }
 
 nav{
@@ -104,15 +120,15 @@ max-width: 400px;
 margin: auto;
 }
 
-.newsletter-toggle{
-font-size: 18px;
-font-family: sans-serif;
-padding: 10px 20px;
-cursor: pointer;
-border-radius: 8px;
-border: 1px solid black;
-background-color: #89CFF0;
-transition: background-color 0.3s ease;
+.newsletter-toggle {
+  font-size: 16px;
+  font-family: sans-serif;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid black;
+  background-color: #89CFF0;
+  transition: 0.3s ease;
 }
 
 .newsletter-toggle:hover{
@@ -140,7 +156,7 @@ margin-top: 10px;
 padding: 10px;
 font-size: 16px;
 border-radius: 10px;
-margin-bottom: 8; 
+margin-bottom: 8px; 
 background-color: #f9f9f9;
 border: 1px solid black;
 width: 200px;
@@ -148,16 +164,7 @@ font-size: 16px;
 border: 1px solid black;
 border-radius: 10px;
 }
-main{
-  background-image: url('');
-  background-size: cover; 
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 65px;
-}
+
 #booking-form {
   font-family: sans-serif;
   background: white; opacity: 60%;
@@ -210,12 +217,6 @@ main{
   background-color: #218838;
 }
 
-body{
-  margin: 0;
-  padding: 0;
-  background-color: pink;
-}
-
 footer{
 background-color: pink;
 font-family: sans-serif;
@@ -240,6 +241,7 @@ grid-row: 3 / 4; grid-column: 1 / 4
 }
 main{
 grid-row: 4 / 5; grid-column: 1 / 4;
+min-height: 100vh;
 }
 aside{
 grid-row: 5 / 6; grid-column: 3/ 4;
@@ -247,6 +249,7 @@ grid-row: 5 / 6; grid-column: 3/ 4;
 footer{
 grid-row: 6 / 7; grid-column: 1 / 4;
 }
+
 
 
 
