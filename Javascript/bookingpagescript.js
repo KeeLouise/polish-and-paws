@@ -145,5 +145,16 @@ document.addEventListener("DOMContentLoaded", function(){
     const time = document.getElementById("time-field");
     const service = document.getElementById("your-message");
 
+    document.querySelectorAll("error-message").forEach(msg => msg.remove());
+
+    function showError(input, message){
+      const errorMsg = document.createElement("span");
+      errorMsg.className = "error-message";
+      errorMsg.style.color = "red";
+      errorMsg.style.fontSize = "12px";
+      errorMsg.textContent = message;
+      input.insertAdjacentElement("afterend", errorMsg);
+      isValid = false;
+    }
   })
 })
