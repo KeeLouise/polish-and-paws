@@ -196,4 +196,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = await response.json();
 
         const fact = data.data[0]?.attributes?.body || 'No fact found!';
-                    factContainer.textContent = fact;
+        factContainer.textContent = fact;
+
+      } catch (error) {
+        console.error('Error fetching dog fact:');
+        factContainer.textContent = 'Could not fetch a dog fact. Try again!';
+    }
+});
+});
+          
