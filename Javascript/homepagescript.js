@@ -194,3 +194,6 @@ document.addEventListener('DOMContentLoaded', () => {
             throw new Error('Failed to fetch dog facts');
         }
         const data = await response.json();
+
+        const fact = data.data[0]?.attributes?.body || 'No fact found!';
+                    factContainer.textContent = fact;
