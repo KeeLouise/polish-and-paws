@@ -235,12 +235,12 @@ nav a:hover {
 
 .text-box {
   position: absolute;
-  top: 70%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
-  background-color: white;
-  opacity: 75%;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: black;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 2px 2px 2px white;
@@ -250,11 +250,31 @@ nav a:hover {
 .text h1 {
   margin: 0;
   font-size: 2em;
+  font-family: sans-serif;
 }
 
 .text p {
   margin: 10px 0 0;
   font-size: 1.2em;
+  font-family: sans-serif;
+}
+
+#get-dog-fact{
+  background-color: pink;
+  font-family: sans-serif;
+  font-style: bold;
+  font-size: 1.2em;
+
+}
+
+button:hover {
+  background-color: #89CFF0;
+}
+
+#dog-fact {
+  margin-top: 20px;
+  font-size: 18px;
+  color: black;
 }
 
 footer {
@@ -263,6 +283,7 @@ footer {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
+  font-family: sans-serif;
 }
 
 aside{
