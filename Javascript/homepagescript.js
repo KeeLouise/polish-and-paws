@@ -186,4 +186,10 @@ document.addEventListener('DOMContentLoaded', initSlider);
 document.addEventListener('DOMContentLoaded', () => {
   const factButton = document.getElementById('get-dog-fact');
   const factContainer = document.getElementById('dog-fact');
-}
+
+  factButton.addEventListener('click', async () => {
+    try {
+        const response = await fetch('https://dogapi.dog/api/v2/facts');
+        if (!response.ok) {
+            throw new Error('Failed to fetch dog facts');
+        }
