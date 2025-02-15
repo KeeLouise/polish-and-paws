@@ -239,7 +239,7 @@ nav a:hover {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(137, 207, 240, 0.6);
   color: black;
   padding: 20px;
   border-radius: 8px;
