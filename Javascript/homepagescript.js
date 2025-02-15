@@ -193,4 +193,4 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!response.ok) {
             throw new Error('Failed to fetch dog facts');
         }
-        const data = await response.json()
+        const data = await response.json();
