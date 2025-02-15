@@ -189,19 +189,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   factButton.addEventListener('click', async () => {
     try {
-        const response = await fetch('https://dogapi.dog/api/v2/facts');
-        if (!response.ok) {
-            throw new Error('Failed to fetch dog facts');
-        }
-        const data = await response.json();
-
-        const fact = data.data[0]?.attributes?.body || 'No fact found!';
-        factContainer.textContent = fact;
-
-      } catch (error) {
-        console.error('Error fetching dog fact:');
-        factContainer.textContent = 'Could not fetch a dog fact. Try again!';
+    const response = await fetch('https://dogapi.dog/api/v2/facts');
+    if (!response.ok) {
+    throw new Error('Failed to fetch dog facts');
     }
+    const data = await response.json();
+
+    const fact = data.data[0]?.attributes?.body || 'No fact found!';
+    factContainer.textContent = fact;
+    
+  } catch (error) {
+    console.error('Error fetching dog fact:', error);
+    factContainer.textContent = 'Could not fetch a dog fact. Try again!';
+  }
 });
 });
           
