@@ -194,4 +194,10 @@ document.addEventListener("DOMContentLoaded", function(){
 function createBubble() {
   const section = document.querySelector('main');
   const createElement = document.createElement('span');
+  var size = Math.random() * 60;
+
+  createElement.style.width = 75 + 'px';
+  createElement.style.height = 75 + 'px';
+  createElement.style.left = Math.random() * innerWidth + "px";
+  section.appendChild(createElement);
 }
