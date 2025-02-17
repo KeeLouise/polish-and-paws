@@ -235,8 +235,8 @@ main span{
   bottom: 50px;
   border-radius: 50%;
   pointer-events: none;
-  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
-  animation: animate 4s linear infinite;
+  box-shadow: inset 0 0 10px #89CFF0; opacity: 0.5;
+  animation: animate 4.75s linear infinite;
 }
 
 main span::before{
@@ -251,17 +251,17 @@ main span::before{
 
 @keyframes animate{
   0%{
-    transform: translateY(0%);
+    transform: translateY(500%);
     opacity:1;
   }
   
-  99%{
+  90%{
     opacity: 1;
   }
   100%
   {
-    transform: translateY(-1000%);
-    opacity:1;
+    transform: translateY(-1700%);
+    opacity: 1;
   }
   }
 
