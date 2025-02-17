@@ -200,4 +200,10 @@ function createBubble() {
   createElement.style.height = 75 + 'px';
   createElement.style.left = Math.random() * innerWidth + "px";
   section.appendChild(createElement);
+
+  setTimeout(() => {
+      createElement.remove();
+  }, 2500);
 }
+
+setInterval(createBubble, 200);
