@@ -189,3 +189,9 @@ document.addEventListener("DOMContentLoaded", function(){
     }
   });
 });
+
+//Bubble animation script
+function createBubble() {
+  const section = document.querySelector('main');
+  const createElement = document.createElement('span');
+}
