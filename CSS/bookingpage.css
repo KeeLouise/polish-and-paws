@@ -184,20 +184,37 @@ border-radius: 10px;
   margin: auto;
 
 }
-#booking-form h2 {
+#booking-form h1 {
   text-align: center;
   margin-bottom: 10px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 3em;
+  font-style: italic;
+  color: black;
+  padding-top: 10px;
+  padding-bottom: 25px;
+  text-shadow:2px 2px 2px pink;
 }
 .form-group {
   margin-bottom: 15px;
 }
 .form-group label {
   display: block;
+  text-align: center;
+  text-align: center;
+  font-family: sans-serif;
   font-weight: bold;
+  padding-bottom: 5px;
+  font-size: 1.10em;
+  font-style: italic;
+  color: black;
+  text-shadow:2px 2px 2px pink;
 }
 .form-group input,
 .form-group select,
 .form-group textarea {
+  font-family: sans-serif;
   width: 75%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -225,6 +242,7 @@ border-radius: 10px;
 footer{
 background-color: pink;
 font-family: sans-serif;
+font-weight: bold;
 text-align: center;
 margin-bottom: 20px;
 padding-top: 20px;
