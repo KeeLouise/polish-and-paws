@@ -249,6 +249,22 @@ main span::before{
   border-radius: 50%;
 }
 
+@keyframes animate{
+  0%{
+    transform: translateY(0%);
+    opacity:1;
+  }
+  
+  99%{
+    opacity: 1;
+  }
+  100%
+  {
+    transform: translateY(-1000%);
+    opacity:1;
+  }
+  }
+
 aside{
   display: none;
 }
