@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     if (isValid) {
-        alert("Form submitted successfully!");
+        alert("Booking has been received!");
         form.submit();
     }
   });
