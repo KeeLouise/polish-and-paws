@@ -253,11 +253,12 @@ main{
 }
 
 footer{
-background-color: pink;
-font-family: sans-serif;
-text-align: center;
-margin-bottom: 20px;
-padding-top: 20px;
+  background-color: pink;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 20px;
 }
 
 aside{
