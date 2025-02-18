@@ -27,6 +27,13 @@
     <div class="main-header">
       <img src="./images/company-logo.webp" width="500" height="250" alt="Company Logo" class="desktop-logo">
       <img src="./images/company-logo.webp" width="300" height="150" alt="Company Logo" class="mobiletablet-logo">
+      <div class="mobile-nav">
+        <div class="hamburger-menu" onclick="toggleMenu()">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        </div>
       <nav>
         <a href="#">Home</a>
         <a href="./servicespage/index.html">Our Services</a>
@@ -35,19 +42,19 @@
     </div>
   </header>
   <main>
-<div class="slideshow-container">
-
-  <div class="text-box">
-    <h1>Welcome to Polish &amp; Paws</h1>
-    <p>Established in 2024 by a group of Animal Care Specialists, we are passionate about caring for your dogs.
-       All of our staff are fully trained and qualified under OCNNI standards and above. You can trust us in giving your Pooch the pamper they deserve!
-    </p>
-    <div class="dog-fact-container">
-      <h1>Dog Fact Generator</h1>
-      <button type="button" id="get-dog-fact">Get Dog Fact</button>
-      <p id="dog-fact">Click the button to get a fun dog fact!</p>
+    <div class="slideshow-wrapper">
+    <div class="text-box">
+      <h1>Welcome to Polish &amp; Paws</h1>
+      <p>Established in 2024 by a group of Animal Care Specialists, we are passionate about caring for your dogs.
+         All of our staff are fully trained and qualified under OCNNI standards and above. You can trust us in giving your Pooch the pamper they deserve!
+      </p>
+      <div class="dog-fact-container">
+        <h1>Dog Fact Generator</h1>
+        <button type="button" id="get-dog-fact">Get Dog Fact</button>
+        <p id="dog-fact">Click the button to get a fun dog fact!</p>
+    </div>
   </div>
-</div>
+<div class="slideshow-container">
 
   <div class="mySlides fade">
     <img src="./images/img1.webp" width="100%" alt="Dog being groomed">
@@ -72,15 +79,6 @@
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
   <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
-<br>
-
-<div id="dots">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-  <span class="dot" onclick="currentSlide(4)"></span>
-  <span class="dot" onclick="currentSlide(5)"></span>
-
 </div>
 </main>
 <footer>Polish &amp; Paws Copyright &copy; 2024<br>
