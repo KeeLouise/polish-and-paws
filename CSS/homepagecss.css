@@ -380,6 +380,8 @@ footer {
 
   header{
     align-items: center;
+    width: 80%;
+    justify-self: center;
   }
 
   .logo-container {
@@ -434,7 +436,7 @@ footer {
   }
 
   .text-box {
-    max-width: 100%;
+    max-width: 80%;
     height: 200px;
   }
 
@@ -442,6 +444,10 @@ footer {
     flex-direction: column;
     gap: 10px;
   }
+
+  .slideshow-container {
+  width: 80%;
+}
 
   nav a {
     font-size: 1.5em;
