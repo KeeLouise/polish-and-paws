@@ -17,6 +17,7 @@ header {
   flex-direction: column;
   width: 100%;
   box-sizing: border-box;
+  padding-top: 20px;
 }
 
 .top-bar {
@@ -318,6 +319,7 @@ footer {
   margin-bottom: 20px;
   padding-top: 20px;
 }
+
 
 aside {
   display: none;

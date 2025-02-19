@@ -66,6 +66,19 @@ document.addEventListener('DOMContentLoaded', () => {
   new SearchHighlighter('search-bar', 'search-button', 'message');
 });
 
+//Hamburger menu script
+
+function toggleMenu() {
+  const mobileNav = document.getElementById('mobile-nav');  // Target the mobile nav
+  const hamburger = document.querySelector('.hamburger-menu');
+  
+  mobileNav.classList.toggle('active');  // Toggle visibility of the mobile menu
+  hamburger.classList.toggle('active');
+}
+
+document.querySelector('.hamburger-menu').addEventListener('click', toggleMenu);
+document.querySelector('.hamburger-menu').addEventListener('touchstart', toggleMenu);
+
 // Navigation Script
 const navLinks = document.querySelectorAll('nav a');
 
