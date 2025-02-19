@@ -366,7 +366,7 @@ footer {
   }
   
   #main-header{
-    margin-bottom: auto;
+    margin:0;
   }
   
   #search-bar {
@@ -407,11 +407,11 @@ footer {
   .logo-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    gap:10px;
+    align-items: center; 
     width: 100%;
-    padding: 20px;
+    padding-top: 50px;
+    padding-bottom: 10px;
   }
 
   nav {
