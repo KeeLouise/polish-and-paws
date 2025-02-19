@@ -96,6 +96,31 @@ margin-top: -50px;
 margin-bottom: 50px;
 }
 
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  gap: 5px;
+}
+
+.hamburger-menu .bar {
+  width: 30px;
+  height: 4px;
+  background-color: black;
+  border-radius: 2px;
+}
+
+.hamburger-menu.active + #mobile-nav.active{
+  display: flex;
+}
+
+#mobile-nav {
+  display: none;
+}
+
 nav{
 display: flex;
 gap: 50px;

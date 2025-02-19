@@ -69,10 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
 //Hamburger menu script
 
 function toggleMenu() {
-  const mobileNav = document.getElementById('mobile-nav');  // Target the mobile nav
+  const mobileNav = document.getElementById('mobile-nav');
   const hamburger = document.querySelector('.hamburger-menu');
   
-  mobileNav.classList.toggle('active');  // Toggle visibility of the mobile menu
+  mobileNav.classList.toggle('active');
   hamburger.classList.toggle('active');
 }
 

@@ -127,16 +127,38 @@ navLinks.forEach(link => {
   link.addEventListener('mouseout', resetLink);
 });
 
+//Hamburger menu script
+
+function toggleMenu() {
+  const mobileNav = document.getElementById('mobile-nav');
+  const hamburger = document.querySelector('.hamburger-menu');
+  
+  mobileNav.classList.toggle('active');
+  hamburger.classList.toggle('active');
+}
+
+document.querySelector('.hamburger-menu').addEventListener('click', toggleMenu);
+document.querySelector('.hamburger-menu').addEventListener('touchstart', toggleMenu);
+
 //Booking Script
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("booking-form");
+  
+  const dateField = document.getElementById("date-field");
+  const today = new Date();
+  const todayFormatted = today.toISOString().split('T')[0];
+  dateField.setAttribute("min", todayFormatted);
 
-  form.addEventListener("submit", function(event){
+  const timeField = document.getElementById("time-field");
+  timeField.setAttribute("min", "08:30");
+  timeField.setAttribute("max", "18:00");
+
+  form.addEventListener("submit", function (event) {
     event.preventDefault();
 
     let isValid = true;
-  
+
     const fullName = document.getElementById("full-name");
     const dogName = document.getElementById("dogs-name");
     const email = document.getElementById("email-field");
@@ -145,15 +167,20 @@ document.addEventListener("DOMContentLoaded", function(){
     const time = document.getElementById("time-field");
     const service = document.getElementById("your-message");
 
-    document.querySelectorAll("error-message").forEach(msg => msg.remove());
+    document.querySelectorAll(".error-message").forEach(msg => msg.remove());
 
-    function showError(input, message){
-      const errorMsg = document.createElement("span");
+    function showError(input, message) {
+      const errorMsg = document.createElement("div");
       errorMsg.className = "error-message";
       errorMsg.style.color = "red";
       errorMsg.style.fontSize = "12px";
+      errorMsg.style.marginTop = "5px";
       errorMsg.textContent = message;
-      input.insertAdjacentElement("afterend", errorMsg);
+
+      if (input.parentElement) {
+        input.parentElement.appendChild(errorMsg);
+      }
+
       isValid = false;
     }
 
@@ -167,32 +194,38 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     const phoneRegex = /^[0-9]{10}$/;
-    if (!phoneRegex.test(phone.value.trim())){
+    if (!phoneRegex.test(phone.value.trim())) {
       showError(phone, "Enter a valid phone number (10 digits)");
     }
 
-      if (date.value.trim() === "") {
-        showError(date, "Please select a booking date.");
+    const selectedDate = new Date(date.value);
+    if (!date.value.trim()) {
+      showError(date, "Please select a booking date.");
+    } else if (selectedDate < today) {
+      showError(date, "You cannot select a past date.");
     }
 
-    if (time.value.trim() === "") {
-        showError(time, "Please select a booking time.");
+    const selectedTime = time.value;
+    if (!time.value.trim()) {
+      showError(time, "Please select a booking time.");
+    } else if (selectedTime < "08:30" || selectedTime > "18:00") {
+      showError(time, "Time must be between 08:30 AM and 06:00 PM.");
     }
 
     if (service.value.trim() === "") {
-        showError(service, "Please enter the service required.");
+      showError(service, "Please enter the service required.");
     }
 
     if (isValid) {
-        alert("Booking has been received!");
-        form.submit();
+      alert("Booking has been received!");
+      form.submit();
     }
   });
 });
 
 //Bubble animation script
 function createBubble() {
-  const section = document.querySelector('main');
+  const section = document.querySelector('body');
   const createElement = document.createElement('span');
   var size = Math.random() * 60 +20;
 
