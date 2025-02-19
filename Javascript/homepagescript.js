@@ -109,6 +109,16 @@ form.addEventListener('submit', function (event) {
   emailInput.value = '';
 });
 
+//Hamburger menu script
+
+function toggleMenu() {
+  const mobileNav = document.getElementById('mobile-nav');  // Target the mobile nav
+  const hamburger = document.querySelector('.hamburger-menu');
+  
+  mobileNav.classList.toggle('active');  // Toggle visibility of the mobile menu
+  hamburger.classList.toggle('active');
+}
+
 // Nav Script
 const navLinks = document.querySelectorAll('nav a');
 
@@ -133,11 +143,8 @@ let autoPlayInterval;
 
 function showSlides() {
   const slides = document.querySelectorAll('.mySlides');
-  const dots = document.querySelectorAll('.dot');
 
   slides.forEach(slide => (slide.style.display = 'none'));
-
-  dots.forEach(dot => dot.classList.remove('active'));
 
   slideIndex++;
 
@@ -145,7 +152,6 @@ function showSlides() {
     slideIndex = 1;
   }
   slides[slideIndex - 1].style.display = 'block';
-  dots[slideIndex - 1].classList.add('active');
 }
 
 function startAutoPlay() {
