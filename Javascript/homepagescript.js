@@ -119,6 +119,9 @@ function toggleMenu() {
   hamburger.classList.toggle('active');
 }
 
+document.querySelector('.hamburger-menu').addEventListener('click', toggleMenu);
+document.querySelector('.hamburger-menu').addEventListener('touchstart', toggleMenu);
+
 // Nav Script
 const navLinks = document.querySelectorAll('nav a');
 
