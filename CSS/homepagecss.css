@@ -152,6 +152,8 @@ nav a {
   font-family: sans-serif;
   font-size: 2em;
   color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0);
+  
 }
 
 nav a:hover {
@@ -285,6 +287,12 @@ main {
   background-color: #89CFF0;
 }
 
+.responsive-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
  h1 {
   margin: 0;
   font-size: 2em;
@@ -368,6 +376,7 @@ footer {
   
   .mobiletablet-logo {
     display: inline;
+    padding-top:30px ;
     padding-bottom: 20px;
   }
 
@@ -427,7 +436,7 @@ footer {
 
   .newsletter-container {
     width: 80%;
-    max-width: 300px;
+    max-width: auto;
     margin: 0;
     padding: 0;
   }
@@ -438,6 +447,12 @@ footer {
     padding: 2px;
     margin-bottom: 50px;
     pointer-events: auto;
+  }
+
+  .newsletter-dropdown {
+    
+    margin:0;
+    
   }
   
   nav {
