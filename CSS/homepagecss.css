@@ -57,7 +57,7 @@ header {
 #message {
   display: none;
   color: red;
-  background-color: white; opacity: 60%;
+  background-color: white;
   font-family: sans-serif;
   border: 2px solid #89CFF0;
   border-radius: 10px;
@@ -115,7 +115,7 @@ button:hover {
 }
 
 .hamburger-menu.active + #mobile-nav.active{
-  display: block;
+  display: flex;
 }
 
 #mobile-nav {
@@ -385,7 +385,7 @@ footer {
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 20px;
+    padding: 5px;
   }
 
   .top-bar {
@@ -393,6 +393,7 @@ footer {
     align-items: center;
     text-align: center;
     gap: 10px;
+    margin: 0;
   }
 
   .search-container {
@@ -418,29 +419,29 @@ footer {
   }
   
   button {
-    padding: 2px 2px;
+    padding:2px;
     font-size: 16px;
+    margin-bottom: 5px;
   
   }
 
   .newsletter-container {
     width: 80%;
     max-width: 300px;
+    margin: 0;
+    padding: 0;
   }
   
   .newsletter-toggle {
     font-size: 14px;
     width: 175px;
     padding: 2px;
+    margin-bottom: 50px;
     pointer-events: auto;
   }
   
   nav {
     display: none;
-    width: 100%;
-    flex-direction: row;
-    text-align: center;
-    background-color: #333;
   }
 
   nav.active {
@@ -451,27 +452,30 @@ footer {
     display: flex;
   }
 
+  
   #mobile-nav {
     gap: 10px;
     position: absolute;
-    top: 60px;
-    right: 20px;
+    top: 200px;
+    right: 120px;
     background-color: pink;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
   }
 
   #mobile-nav ul {
     list-style: none;
+    font-family: sans-serif;
+    color: #89CFF0;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
   }
 
   #mobile-nav ul li a {
     text-decoration: none;
-    color: black;
+    color: #89CFF0;
     font-size: 1.5em;
   }
 
