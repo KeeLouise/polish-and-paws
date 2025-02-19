@@ -10,12 +10,13 @@ body, html{
 }
 
 header{
-  position: relative;
-  z-index: 10;
+position: relative;
+z-index: 10;
 display: flex;
 flex-direction: column;
 width: 100%;
 box-sizing: border-box;
+padding: 20px;
 }
 
 .top-bar{
@@ -82,7 +83,6 @@ background-color: white;
 }
 
 .main-header{
-  
 display: flex;
 align-items: center;
 justify-content: center;
@@ -93,7 +93,6 @@ margin-left: -50px;
 margin-right: -50px;
 margin-top: -50px;
 margin-bottom: 50px;
-
 }
 
 nav{
@@ -184,8 +183,8 @@ border-radius: 10px;
   text-align: center;
   padding: 20px;
   margin: auto;
-
 }
+
 #booking-form h1 {
   text-align: center;
   margin-bottom: 10px;
@@ -311,7 +310,222 @@ footer{
 grid-row: 6 / 7; grid-column: 1 / 4;
 }
 
+@media (max-width: 480px) {
+  
+  .desktop-logo {
+    display: none;
+  }
+  
+  .mobiletablet-logo {
+    display: inline;
+    padding-top:30px ;
+    padding-bottom: 20px;
+  }
 
+  header{
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    width: 80%;
+    justify-self: center;
+  }
+
+  .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 5px;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    margin: 0;
+  }
+
+  .search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  #search-bar {
+    width: 50%;
+    max-width: 250px;
+    padding: 2px;
+  }
+
+  #message {
+    padding: 2px;
+    font-size: 10px;
+  }
+  
+  #message.show {
+    display: block;
+  }
+  .newsletter-dropdown input {
+    padding: 2px;
+    font-size: 14px;
+   
+    width: 95%;
+  }
+  nav {
+    display: none;
+  }
+
+  nav.active {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+  
+  #mobile-nav {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: pink;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+  #mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #mobile-nav.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  #mobile-nav ul li a {
+    text-decoration: none;
+    color: #89CFF0;
+    font-family: sans-serif;
+    font-size: 1.5em;
+  }
+
+  #mobile-nav ul li a:hover {
+    color: #89CFF0;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .text-box {
+    max-width: 80%;
+    height: 200px;
+  }
+
+  .slideshow-wrapper {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .slideshow-container {
+  width: 80%;
+}
+
+  nav a {
+    font-size: 1.5em;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  #booking-form {
+  max-width: 300px;
+}
+
+main{
+  margin-bottom: -130px;
+}
+
+#booking-form h1 {
+  margin-bottom: 10px;
+  font-size: 2em;
+  font-style: italic;
+  color: black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-shadow:2px 2px 2px pink;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  text-align: center;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  padding-bottom: 5px;
+  font-size: 1.10em;
+  font-style: italic;
+  color: black;
+  text-shadow:2px 2px 2px pink;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: sans-serif;
+  width: 75%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+}
+
+main span {
+  left: 50%;
+  transform: translateX(-50%) scale(0.25);
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(-50%) translateY(500%);
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(-1700%);
+    opacity: 1;
+  }
+}
+
+}
 
 
 
