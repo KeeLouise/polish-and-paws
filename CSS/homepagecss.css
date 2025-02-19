@@ -114,9 +114,21 @@ button:hover {
   border-radius: 2px;
 }
 
-#mobile-nav {
+.hamburger-menu.active + #mobile-nav{
   display: flex;
-  gap: 20px;
+}
+
+#mobile-nav {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: pink;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 #mobile-nav ul {
