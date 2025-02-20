@@ -473,7 +473,7 @@ footer {
   }
 
   .text-box {
-    max-width: 80%;
+    width: 80%;
     height: 200px;
   }
 
@@ -497,4 +497,151 @@ footer {
     gap: 10px;
   }
 }
+/* Tablet Portrait Mode (600px - 820px) */
+@media (min-width: 600px) and (max-width: 820px) {
+  
 
+  .desktop-logo {
+    display: none;
+  }
+  
+  .mobiletablet-logo {
+    display: inline;
+    padding-top:30px ;
+    padding-bottom: 20px;
+  }
+
+  header{
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    width: 80%;
+    justify-self: center;
+  }
+
+  .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 5px;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    margin: 0;
+  }
+
+  .search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  #search-bar {
+    width: 50%;
+    max-width: 250px;
+    padding: 2px;
+  }
+
+  #message {
+    padding: 2px;
+    font-size: 10px;
+  }
+  
+  #message.show {
+    display: block;
+  }
+  .newsletter-dropdown input {
+    padding: 2px;
+    font-size: 14px;
+   
+    width: 95%;
+  }
+  nav {
+    display: none;
+  }
+
+  nav.active {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+  
+  #mobile-nav {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: pink;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+  #mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #mobile-nav.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  #mobile-nav ul li a {
+    text-decoration: none;
+    color: #89CFF0;
+    font-family: sans-serif;
+    font-size: 1.5em;
+  }
+
+  #mobile-nav ul li a:hover {
+    color: #89CFF0;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .text-box {
+    width: 80%;
+    height: 200px;
+  }
+
+  .slideshow-wrapper {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .slideshow-container {
+  width: 80%;
+}
+
+  nav a {
+    font-size: 1.5em;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+}
