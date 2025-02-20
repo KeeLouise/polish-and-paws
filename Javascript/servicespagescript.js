@@ -222,7 +222,7 @@ function renderServices(servicesToRender) {
     const serviceItem = document.createElement('li');
     serviceItem.className = 'service-item';
     serviceItem.innerHTML = `
-      <h3>${service.title}</h3>
+      <h2>${service.title}</h2>
       <p>${service.displayInfo()}</p>
     `;
     serviceList.appendChild(serviceItem);

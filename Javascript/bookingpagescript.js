@@ -140,11 +140,10 @@ function toggleMenu() {
 document.querySelector('.hamburger-menu').addEventListener('click', toggleMenu);
 document.querySelector('.hamburger-menu').addEventListener('touchstart', toggleMenu);
 
-//Booking Script
-
+// Booking Script
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("booking-form");
-  
+
   const dateField = document.getElementById("date-field");
   const today = new Date();
   const todayFormatted = today.toISOString().split('T')[0];
@@ -222,6 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
 
 //Bubble animation script
 function createBubble() {
