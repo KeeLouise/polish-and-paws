@@ -9,7 +9,7 @@
 
 ## Website Goal
 
-    This website is targeted to dog owners whom are looking for a grooming service for their dog. I want to draw this audience in by using a visually appealing logo and colours, also using some interactive elements to keep users interested.
+    This website is targeted to dog owners whom are looking for a grooming service for their dog. I wanted to draw this audience in by using a visually appealing logo and colours, also using some interactive elements to keep users interested.
  
 
 ## List of sources

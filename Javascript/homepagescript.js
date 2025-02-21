@@ -110,7 +110,6 @@ form.addEventListener('submit', function (event) {
 });
 
 //Hamburger menu script
-
 function toggleMenu() {
   const mobileNav = document.getElementById('mobile-nav');
   const hamburger = document.querySelector('.hamburger-menu');

@@ -67,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 //Hamburger menu script
-
 function toggleMenu() {
   const mobileNav = document.getElementById('mobile-nav');
   const hamburger = document.querySelector('.hamburger-menu');
@@ -150,7 +149,7 @@ class Service {
   }
 
   displayInfo() {
-    return `${this.title} - Price: $${this.price} - Suitable for: ${this.dogSize} dogs`;
+    return `${this.title} - Price: €${this.price} - Suitable for: ${this.dogSize} dogs`;
   }
 }
 
@@ -193,7 +192,7 @@ class NailTrimService extends Service {
   displayInfo() {
     let info = super.displayInfo();
     if (this.isForAllBreeds) {
-      info += " (Available for All Breeds)";
+      info += " (Available for all breeds)";
     }
     return info;
   }

@@ -128,7 +128,6 @@ navLinks.forEach(link => {
 });
 
 //Hamburger menu script
-
 function toggleMenu() {
   const mobileNav = document.getElementById('mobile-nav');
   const hamburger = document.querySelector('.hamburger-menu');
